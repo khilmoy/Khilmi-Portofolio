@@ -1,13 +1,13 @@
 import {
     MousePointerClick,
     Code,
-    Award,
     Download,
     Shield,
     Zap,
     TrendingUp,
     Briefcase,
     Mail,
+    Target,
 } from "lucide-react";
 
 import { motion, useInView } from "framer-motion";
@@ -42,14 +42,9 @@ export const HeroSection = () => {
     ];
 
     const achievements = [
-        {
-            number: "1+",
-            label: "Years Learning",
-            icon: <Shield className="h-3 w-3" />,
-        },
 
         {
-            number: "6+",
+            number: "7+",
             label: "Projects Built",
             icon: (
                 <TrendingUp className="h-3 w-3" />
@@ -57,15 +52,28 @@ export const HeroSection = () => {
         },
 
         {
-            number: "UI/UX",
-            label: "Figma Designs",
-            icon: <Award className="h-3 w-3" />,
+
+            number: "1+",
+            label: "Years Learning",
+            icon: (
+                <Shield className="h-3 w-3" />
+            ),
+        },
+
+        {
+            number: "100%",
+            label: "Creative",
+            icon: (
+                <Target className="h-4 w-4" />
+            ),
         },
 
         {
             number: "Open",
             label: "Freelance",
-            icon: <Zap className="h-3 w-3" />,
+            icon: (
+                <Zap className="h-3 w-3" />
+            ),
         },
     ];
 
@@ -201,7 +209,7 @@ export const HeroSection = () => {
 
                     </h1>
 
-                    {/* DESC */}
+                    {/* DESCRIPTION */}
                     <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg lg:mx-0 lg:mt-8">
 
                         Building modern digital experiences with clean UI,
@@ -253,19 +261,26 @@ export const HeroSection = () => {
                     </div>
 
                     {/* BUTTONS */}
-                    <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap lg:justify-start md:mt-10">
+                    <div className="mt-8 grid grid-cols-3 gap-3 md:mt-10 sm:flex sm:flex-wrap lg:justify-start">
 
                         <motion.a
                             href="#projects"
                             whileHover={{
                                 scale: 1.05,
                             }}
-                            className="flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-pink-500 to-purple-600 px-6 py-4 text-sm font-semibold text-white shadow-[0_0_60px_rgba(236,72,153,0.18)] sm:px-8 sm:text-base"
+                            whileTap={{
+                                scale: 0.97,
+                            }}
+                            className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-pink-500 to-purple-600 px-2 py-3 text-[11px] font-semibold text-white shadow-[0_0_60px_rgba(236,72,153,0.18)] transition-all duration-300 sm:px-6 sm:py-4 sm:text-sm md:text-base"
                         >
 
-                            <Code className="h-5 w-5" />
+                            <Code className="h-4 w-4 sm:h-5 sm:w-5" />
 
-                            View Projects
+                            <span className="truncate">
+
+                                Projects
+
+                            </span>
 
                         </motion.a>
 
@@ -274,12 +289,19 @@ export const HeroSection = () => {
                             whileHover={{
                                 scale: 1.05,
                             }}
-                            className="flex items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/5 px-6 py-4 text-sm font-semibold text-white backdrop-blur-xl sm:px-8 sm:text-base"
+                            whileTap={{
+                                scale: 0.97,
+                            }}
+                            className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-2 py-3 text-[11px] font-semibold text-white backdrop-blur-xl transition-all duration-300 hover:border-pink-500/30 hover:text-pink-400 sm:px-6 sm:py-4 sm:text-sm md:text-base"
                         >
 
                             <Mail className="h-4 w-4" />
 
-                            Contact Me
+                            <span className="truncate">
+
+                                Contact
+
+                            </span>
 
                         </motion.a>
 
@@ -290,12 +312,19 @@ export const HeroSection = () => {
                             whileHover={{
                                 scale: 1.05,
                             }}
-                            className="flex items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/5 px-6 py-4 text-sm font-semibold text-white/70 backdrop-blur-xl sm:text-base"
+                            whileTap={{
+                                scale: 0.97,
+                            }}
+                            className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-2 py-3 text-[11px] font-semibold text-white/70 backdrop-blur-xl transition-all duration-300 hover:border-pink-500/30 hover:text-pink-400 sm:px-6 sm:py-4 sm:text-sm md:text-base"
                         >
 
                             <Download className="h-4 w-4" />
 
-                            Download CV
+                            <span className="truncate">
+
+                                Download CV
+
+                            </span>
 
                         </motion.button>
 
@@ -361,32 +390,32 @@ export const HeroSection = () => {
                                                 className={`${line.includes(
                                                     "import"
                                                 )
-                                                        ? "text-purple-400"
+                                                    ? "text-purple-400"
+                                                    : line.includes(
+                                                        "const"
+                                                    )
+                                                        ? "text-pink-400"
                                                         : line.includes(
-                                                            "const"
+                                                            "name:"
                                                         )
-                                                            ? "text-pink-400"
+                                                            ? "text-cyan-400"
                                                             : line.includes(
-                                                                "name:"
+                                                                "stack:"
                                                             )
-                                                                ? "text-cyan-400"
+                                                                ? "text-yellow-300"
                                                                 : line.includes(
-                                                                    "stack:"
+                                                                    "focus:"
                                                                 )
-                                                                    ? "text-yellow-300"
+                                                                    ? "text-green-400"
                                                                     : line.includes(
-                                                                        "focus:"
+                                                                        "status:"
                                                                     )
-                                                                        ? "text-green-400"
+                                                                        ? "text-orange-300"
                                                                         : line.includes(
-                                                                            "status:"
+                                                                            "console.log"
                                                                         )
-                                                                            ? "text-orange-300"
-                                                                            : line.includes(
-                                                                                "console.log"
-                                                                            )
-                                                                                ? "text-red-400"
-                                                                                : "text-white/80"
+                                                                            ? "text-red-400"
+                                                                            : "text-white/80"
                                                     }`}
                                             >
                                                 {line}
@@ -402,32 +431,32 @@ export const HeroSection = () => {
                                                         className={`${displayedCode.includes(
                                                             "import"
                                                         )
-                                                                ? "text-purple-400"
+                                                            ? "text-purple-400"
+                                                            : displayedCode.includes(
+                                                                "const"
+                                                            )
+                                                                ? "text-pink-400"
                                                                 : displayedCode.includes(
-                                                                    "const"
+                                                                    "name:"
                                                                 )
-                                                                    ? "text-pink-400"
+                                                                    ? "text-cyan-400"
                                                                     : displayedCode.includes(
-                                                                        "name:"
+                                                                        "stack:"
                                                                     )
-                                                                        ? "text-cyan-400"
+                                                                        ? "text-yellow-300"
                                                                         : displayedCode.includes(
-                                                                            "stack:"
+                                                                            "focus:"
                                                                         )
-                                                                            ? "text-yellow-300"
+                                                                            ? "text-green-400"
                                                                             : displayedCode.includes(
-                                                                                "focus:"
+                                                                                "status:"
                                                                             )
-                                                                                ? "text-green-400"
+                                                                                ? "text-orange-300"
                                                                                 : displayedCode.includes(
-                                                                                    "status:"
+                                                                                    "console.log"
                                                                                 )
-                                                                                    ? "text-orange-300"
-                                                                                    : displayedCode.includes(
-                                                                                        "console.log"
-                                                                                    )
-                                                                                        ? "text-red-400"
-                                                                                        : "text-white/80"
+                                                                                    ? "text-red-400"
+                                                                                    : "text-white/80"
                                                             }`}
                                                     >
                                                         {
@@ -468,15 +497,30 @@ export const HeroSection = () => {
             </div>
 
             {/* SCROLL */}
-            <motion.div className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center sm:flex">
+            <motion.div
+                className="absolute bottom-4 left-1/2 hidden -translate-x-1/2 sm:flex"
+            >
 
-                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-pink-400 backdrop-blur-xl">
+                <motion.div
+                    animate={{
+                        y: [0, 8, 0],
+                    }}
+                    transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                    }}
+                    className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-xs text-pink-400 shadow-[0_0_30px_rgba(236,72,153,0.12)] backdrop-blur-xl"
+                >
 
-                    <MousePointerClick className="h-3 w-3" />
+                    <MousePointerClick className="h-3.5 w-3.5" />
 
-                    Explore Portfolio
+                    <span className="tracking-wide">
 
-                </div>
+                        Explore Portfolio
+
+                    </span>
+
+                </motion.div>
 
             </motion.div>
 

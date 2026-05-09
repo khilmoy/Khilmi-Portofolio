@@ -141,27 +141,27 @@ const projects = [
     },
 
     {
-    number: "07",
+        number: "07",
 
-    title: "My Cooking Hobby",
+        title: "My Cooking Hobby",
 
-    description:
-        "Modern mobile cooking application with clean UI, recipe categories, wishlist feature, and smooth user experience.",
+        description:
+            "Modern mobile cooking application with clean UI, recipe categories, wishlist feature, and smooth user experience.",
 
-    tech: [
-        "React Native",
-        "Expo",
-        "JavaScript",
-        "Tailwind CSS",
-    ],
+        tech: [
+            "React Native",
+            "Expo",
+            "JavaScript",
+            "Tailwind CSS",
+        ],
 
-    github: "#",
+        github: "#",
 
-    demo: "#",
+        demo: "#",
 
-    status:
-        "Mobile App",
-},
+        status:
+            "Mobile App",
+    },
 ];
 
 export const ProjectsSection =
@@ -172,7 +172,7 @@ export const ProjectsSection =
                 className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-8"
             >
 
-                {/* BG */}
+                {/* BACKGROUND */}
                 <div className="absolute inset-0 overflow-hidden">
 
                     <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-pink-500/10 blur-3xl md:h-96 md:w-96" />
@@ -189,14 +189,18 @@ export const ProjectsSection =
                     <motion.div
                         initial={{
                             opacity: 0,
-                            y: 30,
+                            y: 40,
                         }}
                         whileInView={{
                             opacity: 1,
                             y: 0,
                         }}
+                        viewport={{
+                            once: false,
+                            amount: 0.2,
+                        }}
                         transition={{
-                            duration: 0.7,
+                            duration: 0.8,
                         }}
                         className="mb-14 text-center md:mb-20"
                     >
@@ -217,7 +221,7 @@ export const ProjectsSection =
 
                         </h2>
 
-                        <p className="mx-auto max-w-3xl px-2 text-base leading-relaxed text-white/70 sm:text-lg">
+                        <p className="mx-auto max-w-3xl px-2 text-sm leading-relaxed text-white/70 sm:text-base md:text-lg">
 
                             A collection of
                             projects I built
@@ -246,26 +250,36 @@ export const ProjectsSection =
                                     }
                                     initial={{
                                         opacity: 0,
-                                        y: 30,
+                                        y: 60,
+                                        scale: 0.92,
                                     }}
                                     whileInView={{
                                         opacity: 1,
                                         y: 0,
+                                        scale: 1,
+                                    }}
+                                    viewport={{
+                                        once: false,
+                                        amount: 0.2,
                                     }}
                                     transition={{
                                         duration: 0.6,
                                         delay:
                                             index *
-                                            0.1,
+                                            0.08,
+                                        ease: "easeOut",
                                     }}
-                                    className="group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-white/10 bg-white/5 p-4 shadow-[0_0_60px_rgba(236,72,153,0.08)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-pink-500/30 hover:shadow-[0_0_90px_rgba(236,72,153,0.18)] sm:rounded-[32px] sm:p-6 lg:p-7"
+                                    whileHover={{
+                                        y: -10,
+                                    }}
+                                    className="group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-white/10 bg-white/5 p-4 text-left shadow-[0_0_60px_rgba(236,72,153,0.08)] backdrop-blur-xl transition-all duration-300 hover:border-pink-500/30 hover:shadow-[0_0_90px_rgba(236,72,153,0.18)] sm:rounded-[32px] sm:p-6 lg:p-7"
                                 >
 
                                     {/* TOP LINE */}
                                     <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-pink-500 to-purple-600" />
 
                                     {/* NUMBER */}
-                                    <div className="mb-4 text-[10px] font-semibold tracking-[0.25em] text-pink-400/70 sm:mb-5 sm:text-sm">
+                                    <div className="mb-3 text-[10px] font-semibold tracking-[0.2em] text-pink-400/70 sm:mb-5 sm:text-sm">
 
                                         {
                                             project.number
@@ -274,7 +288,7 @@ export const ProjectsSection =
                                     </div>
 
                                     {/* STATUS */}
-                                    <div className="mb-4 inline-flex w-fit rounded-full border border-pink-500/20 bg-pink-500/10 px-3 py-1 text-[10px] font-medium text-pink-400 sm:mb-5 sm:px-4 sm:text-xs">
+                                    <div className="mb-3 inline-flex w-fit rounded-full border border-pink-500/20 bg-pink-500/10 px-2.5 py-1 text-[9px] font-medium text-pink-400 sm:mb-5 sm:px-4 sm:text-xs">
 
                                         {
                                             project.status
@@ -283,7 +297,7 @@ export const ProjectsSection =
                                     </div>
 
                                     {/* TITLE */}
-                                    <h3 className="mb-3 text-lg font-bold leading-tight text-white sm:mb-4 sm:text-2xl">
+                                    <h3 className="mb-3 text-sm font-bold leading-snug text-white sm:mb-4 sm:text-2xl">
 
                                         {
                                             project.title
@@ -291,8 +305,8 @@ export const ProjectsSection =
 
                                     </h3>
 
-                                    {/* DESC */}
-                                    <p className="mb-5 text-xs leading-relaxed text-white/70 sm:mb-6 sm:text-sm">
+                                    {/* DESCRIPTION */}
+                                    <p className="mb-5 text-left text-[11px] leading-[1.7] text-white/70 sm:mb-6 sm:text-sm">
 
                                         {
                                             project.description
@@ -301,7 +315,7 @@ export const ProjectsSection =
                                     </p>
 
                                     {/* TECH */}
-                                    <div className="mb-6 flex flex-wrap gap-2 sm:mb-8">
+                                    <div className="mb-5 flex flex-wrap gap-1.5 sm:mb-8 sm:gap-2">
 
                                         {project.tech.map(
                                             (
@@ -312,7 +326,7 @@ export const ProjectsSection =
                                                     key={
                                                         i
                                                     }
-                                                    className="rounded-full border border-pink-500/20 bg-white/5 px-2 py-1 text-[10px] text-pink-300 sm:px-3 sm:text-xs"
+                                                    className="rounded-full border border-pink-500/20 bg-white/5 px-2 py-1 text-[8px] text-pink-300 sm:px-3 sm:text-xs"
                                                 >
 
                                                     {
@@ -326,16 +340,16 @@ export const ProjectsSection =
                                     </div>
 
                                     {/* BUTTONS */}
-                                    <div className="mt-auto flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                                    <div className="mt-auto flex flex-col gap-2 sm:flex-row sm:flex-wrap">
 
                                         <a
                                             href={
                                                 project.github
                                             }
-                                            className="flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-white transition-all duration-300 hover:border-pink-500/30 hover:bg-pink-500/10 sm:text-sm"
+                                            className="flex items-center justify-center gap-1 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[10px] font-medium text-white transition-all duration-300 hover:border-pink-500/30 hover:bg-pink-500/10 sm:gap-2 sm:px-4 sm:text-sm"
                                         >
 
-                                            <FaGithub className="h-4 w-4" />
+                                            <FaGithub className="h-3 w-3 sm:h-4 sm:w-4" />
 
                                             GitHub
 
@@ -345,12 +359,12 @@ export const ProjectsSection =
                                             href={
                                                 project.demo
                                             }
-                                            className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-4 py-2 text-xs font-medium text-white transition-all duration-300 hover:scale-105 sm:text-sm"
+                                            className="flex items-center justify-center gap-1 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-3 py-2 text-[10px] font-medium text-white transition-all duration-300 hover:scale-105 sm:gap-2 sm:px-4 sm:text-sm"
                                         >
 
-                                            <ExternalLink className="h-4 w-4" />
+                                            <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4" />
 
-                                            Live Demo
+                                            Demo
 
                                         </a>
 
@@ -364,29 +378,38 @@ export const ProjectsSection =
                         <motion.div
                             initial={{
                                 opacity: 0,
-                                y: 30,
+                                y: 60,
+                                scale: 0.92,
                             }}
                             whileInView={{
                                 opacity: 1,
                                 y: 0,
+                                scale: 1,
+                            }}
+                            viewport={{
+                                once: false,
+                                amount: 0.2,
                             }}
                             transition={{
                                 duration: 0.7,
-                                delay: 0.3,
+                                delay: 0.2,
                             }}
-                            className="flex min-h-[240px] items-center justify-center rounded-[24px] border border-dashed border-pink-500/20 bg-white/[0.03] p-6 text-center sm:min-h-[320px] sm:rounded-[32px] sm:p-10"
+                            whileHover={{
+                                y: -10,
+                            }}
+                            className="flex min-h-[240px] items-center justify-center rounded-[24px] border border-dashed border-pink-500/20 bg-white/[0.03] p-4 text-center shadow-[0_0_60px_rgba(236,72,153,0.05)] backdrop-blur-xl transition-all duration-300 hover:border-pink-500/30 hover:shadow-[0_0_90px_rgba(236,72,153,0.12)] sm:min-h-[320px] sm:rounded-[32px] sm:p-10"
                         >
 
                             <div>
 
-                                <h3 className="mb-4 text-2xl font-bold text-white sm:text-3xl">
+                                <h3 className="mb-3 text-lg font-bold text-white sm:mb-4 sm:text-3xl">
 
                                     More Projects
                                     Soon...
 
                                 </h3>
 
-                                <p className="text-sm text-white/60 sm:text-base">
+                                <p className="text-[11px] leading-relaxed text-white/60 sm:text-base">
 
                                     Currently building
                                     more modern and

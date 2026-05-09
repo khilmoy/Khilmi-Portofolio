@@ -90,7 +90,7 @@ export const CertificationsSection =
                 className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-8"
             >
 
-                {/* BG */}
+                {/* BACKGROUND */}
                 <div className="absolute inset-0 overflow-hidden">
 
                     <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-pink-500/10 blur-3xl md:h-96 md:w-96" />
@@ -107,14 +107,18 @@ export const CertificationsSection =
                     <motion.div
                         initial={{
                             opacity: 0,
-                            y: 30,
+                            y: 40,
                         }}
                         whileInView={{
                             opacity: 1,
                             y: 0,
                         }}
+                        viewport={{
+                            once: false,
+                            amount: 0.2,
+                        }}
                         transition={{
-                            duration: 0.7,
+                            duration: 0.8,
                         }}
                         className="mb-14 text-center md:mb-20"
                     >
@@ -138,7 +142,7 @@ export const CertificationsSection =
                         </h2>
 
                         {/* DESC */}
-                        <p className="mx-auto max-w-3xl px-2 text-base leading-relaxed text-white/70 sm:text-lg">
+                        <p className="mx-auto max-w-3xl px-2 text-sm leading-relaxed text-white/70 sm:text-base md:text-lg">
 
                             Certifications and
                             workshops that
@@ -152,7 +156,7 @@ export const CertificationsSection =
                     </motion.div>
 
                     {/* GRID */}
-                    <div className="grid grid-cols-2 gap-4 lg:grid-cols-2 lg:gap-7">
+                    <div className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
 
                         {certifications.map(
                             (
@@ -165,22 +169,32 @@ export const CertificationsSection =
                                     }
                                     initial={{
                                         opacity: 0,
-                                        y: 40,
+                                        y: 60,
+                                        scale: 0.92,
                                     }}
                                     whileInView={{
                                         opacity: 1,
                                         y: 0,
+                                        scale: 1,
+                                    }}
+                                    viewport={{
+                                        once: false,
+                                        amount: 0.2,
                                     }}
                                     transition={{
                                         duration: 0.7,
                                         delay:
                                             index *
-                                            0.1,
+                                            0.08,
+                                        ease: "easeOut",
                                     }}
-                                    className="group relative flex h-full flex-col overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.04] shadow-[0_0_50px_rgba(236,72,153,0.08)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-3 hover:border-pink-500/30 hover:shadow-[0_0_80px_rgba(236,72,153,0.18)] sm:rounded-[32px]"
+                                    whileHover={{
+                                        y: -10,
+                                    }}
+                                    className="group relative flex h-full flex-col overflow-hidden rounded-[22px] border border-white/10 bg-white/[0.04] shadow-[0_0_50px_rgba(236,72,153,0.08)] backdrop-blur-xl transition-all duration-300 hover:border-pink-500/30 hover:shadow-[0_0_80px_rgba(236,72,153,0.18)] sm:rounded-[32px]"
                                 >
 
-                                    {/* FLOATING GLOW */}
+                                    {/* GLOW */}
                                     <div className="absolute -top-20 right-0 h-40 w-40 rounded-full bg-pink-500/10 blur-3xl" />
 
                                     {/* TOP LINE */}
@@ -189,7 +203,6 @@ export const CertificationsSection =
                                     {/* IMAGE */}
                                     <div className="relative overflow-hidden bg-white p-2 sm:p-3">
 
-                                        {/* OVERLAY */}
                                         <div className="absolute inset-0 z-10 bg-black/5 transition-all duration-300 group-hover:bg-black/0" />
 
                                         <img
@@ -199,20 +212,20 @@ export const CertificationsSection =
                                             alt={
                                                 cert.title
                                             }
-                                            className="h-[120px] w-full rounded-xl object-contain transition-all duration-500 group-hover:scale-[1.02] sm:h-[170px]"
+                                            className="h-[95px] w-full rounded-lg object-contain transition-all duration-500 group-hover:scale-[1.03] sm:h-[170px] sm:rounded-xl"
                                         />
 
                                     </div>
 
                                     {/* CONTENT */}
-                                    <div className="flex flex-1 flex-col p-4 sm:p-5">
+                                    <div className="flex flex-1 flex-col p-3 text-left sm:p-5">
 
                                         {/* TOP */}
-                                        <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                                        <div className="mb-3 flex items-center justify-between gap-2">
 
-                                            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-pink-500/20 bg-pink-500/10 px-3 py-1.5 text-[10px] font-medium text-pink-400 sm:text-xs">
+                                            <div className="inline-flex items-center gap-1 rounded-full border border-pink-500/20 bg-pink-500/10 px-2 py-1 text-[8px] font-medium text-pink-400 sm:gap-2 sm:px-3 sm:text-xs">
 
-                                                <Award className="h-3.5 w-3.5" />
+                                                <Award className="h-3 w-3" />
 
                                                 {
                                                     cert.type
@@ -220,9 +233,9 @@ export const CertificationsSection =
 
                                             </div>
 
-                                            <div className="flex items-center gap-2 text-xs text-white/50 sm:text-sm">
+                                            <div className="flex items-center gap-1 text-[9px] text-white/50 sm:gap-2 sm:text-sm">
 
-                                                <ShieldCheck className="h-4 w-4 text-pink-400" />
+                                                <ShieldCheck className="h-3.5 w-3.5 text-pink-400" />
 
                                                 {
                                                     cert.year
@@ -233,7 +246,7 @@ export const CertificationsSection =
                                         </div>
 
                                         {/* TITLE */}
-                                        <h3 className="mb-3 text-sm font-bold leading-snug text-white transition-all duration-300 group-hover:text-pink-300 sm:text-xl">
+                                        <h3 className="mb-2 text-[11px] font-bold leading-[1.5] text-white transition-all duration-300 group-hover:text-pink-300 sm:mb-3 sm:text-lg lg:text-xl">
 
                                             {
                                                 cert.title
@@ -242,7 +255,7 @@ export const CertificationsSection =
                                         </h3>
 
                                         {/* ISSUER */}
-                                        <p className="mb-5 text-xs text-white/60 sm:mb-6 sm:text-sm">
+                                        <p className="mb-4 text-[10px] leading-relaxed text-white/60 sm:mb-6 sm:text-sm">
 
                                             {
                                                 cert.issuer
@@ -257,10 +270,10 @@ export const CertificationsSection =
                                             }
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="mt-auto inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-4 py-2 text-[10px] font-medium text-white transition-all duration-300 hover:scale-105 sm:px-5 sm:py-2.5 sm:text-sm"
+                                            className="mt-auto inline-flex items-center justify-center gap-1 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-3 py-2 text-[9px] font-medium text-white transition-all duration-300 hover:scale-105 sm:gap-2 sm:px-5 sm:py-2.5 sm:text-sm"
                                         >
 
-                                            <ExternalLink className="h-4 w-4" />
+                                            <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
 
                                             View Certificate
 
