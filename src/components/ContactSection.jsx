@@ -328,15 +328,17 @@ export const ContactSection = () => {
                         {/* EMAIL */}
                         <div className="mb-5 rounded-2xl border border-white/10 bg-black/20 p-4 sm:p-5">
 
-                            <div className="flex items-start gap-4">
+                            <div className="flex items-start gap-4 text-left">
 
+                                {/* ICON */}
                                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-pink-500 to-purple-600 text-white">
 
                                     <Mail className="h-5 w-5" />
 
                                 </div>
 
-                                <div className="min-w-0">
+                                {/* CONTENT */}
+                                <div className="min-w-0 flex-1 text-left">
 
                                     <p className="text-sm font-medium text-pink-400">
 
@@ -344,7 +346,7 @@ export const ContactSection = () => {
 
                                     </p>
 
-                                    <h3 className="mt-1 break-words text-sm font-medium text-white sm:text-base">
+                                    <h3 className="mt-1 break-words text-left text-sm font-medium leading-relaxed text-white sm:text-base">
 
                                         khilmilutfan76@gmail.com
 
@@ -359,15 +361,17 @@ export const ContactSection = () => {
                         {/* LOCATION */}
                         <div className="mb-8 rounded-2xl border border-white/10 bg-black/20 p-4 sm:p-5">
 
-                            <div className="flex items-start gap-4">
+                            <div className="flex items-start gap-4 text-left">
 
+                                {/* ICON */}
                                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-pink-500 to-purple-600 text-white">
 
                                     <MapPin className="h-5 w-5" />
 
                                 </div>
 
-                                <div>
+                                {/* CONTENT */}
+                                <div className="min-w-0 flex-1 text-left">
 
                                     <p className="text-sm font-medium text-pink-400">
 
@@ -375,7 +379,7 @@ export const ContactSection = () => {
 
                                     </p>
 
-                                    <h3 className="mt-1 text-sm font-medium leading-relaxed text-white sm:text-base">
+                                    <h3 className="mt-1 break-words text-left text-sm font-medium leading-relaxed text-white sm:text-base">
 
                                         Jl. Melati, Pandan, Canggu,
                                         Badas, Kediri, Jawa Timur
