@@ -139,6 +139,29 @@ const projects = [
         status:
             "Live Project",
     },
+
+    {
+    number: "07",
+
+    title: "My Cooking Hobby",
+
+    description:
+        "Modern mobile cooking application with clean UI, recipe categories, wishlist feature, and smooth user experience.",
+
+    tech: [
+        "React Native",
+        "Expo",
+        "JavaScript",
+        "Tailwind CSS",
+    ],
+
+    github: "#",
+
+    demo: "#",
+
+    status:
+        "Mobile App",
+},
 ];
 
 export const ProjectsSection =

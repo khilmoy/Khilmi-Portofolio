@@ -27,11 +27,11 @@ export const HeroSection = () => {
         useState("");
 
     const codeSnippets = [
-        "import { FrontendDeveloper } from 'khilmi.dev';",
+        "import { FrontendDeveloper } from 'khilmi.jsx';",
         "",
         "const developer = new FrontendDeveloper({",
         "  name: 'Muhammad Khilmi Lutfan Albab',",
-        "  stack: ['React', 'JavaScript', 'Tailwind', 'PHP', 'Laravel'],",
+        "  stack: ['React', 'JavaScript', 'Tailwind CSS', 'Framer Motion', 'Vercel'],",
         "  focus: 'Modern UI & Frontend Development',",
         "  status: 'Open for freelance projects'",
         "});",
@@ -295,7 +295,7 @@ export const HeroSection = () => {
 
                             <Download className="h-4 w-4" />
 
-                            View Resume
+                            Download CV
 
                         </motion.button>
 
@@ -336,7 +336,7 @@ export const HeroSection = () => {
 
                             <div className="absolute left-1/2 -translate-x-1/2 font-mono text-xs text-white/50 sm:text-sm">
 
-                                portfolio.js
+                                portfolio.jsx
 
                             </div>
 
@@ -356,39 +356,38 @@ export const HeroSection = () => {
                                     >
 
                                         {index <
-                                        currentCodeLine ? (
+                                            currentCodeLine ? (
                                             <span
-                                                className={`${
-                                                    line.includes(
-                                                        "import"
-                                                    )
+                                                className={`${line.includes(
+                                                    "import"
+                                                )
                                                         ? "text-purple-400"
                                                         : line.includes(
-                                                              "const"
-                                                          )
-                                                        ? "text-pink-400"
-                                                        : line.includes(
-                                                              "name:"
-                                                          )
-                                                        ? "text-cyan-400"
-                                                        : line.includes(
-                                                              "stack:"
-                                                          )
-                                                        ? "text-yellow-300"
-                                                        : line.includes(
-                                                              "focus:"
-                                                          )
-                                                        ? "text-green-400"
-                                                        : line.includes(
-                                                              "status:"
-                                                          )
-                                                        ? "text-orange-300"
-                                                        : line.includes(
-                                                              "console.log"
-                                                          )
-                                                        ? "text-red-400"
-                                                        : "text-white/80"
-                                                }`}
+                                                            "const"
+                                                        )
+                                                            ? "text-pink-400"
+                                                            : line.includes(
+                                                                "name:"
+                                                            )
+                                                                ? "text-cyan-400"
+                                                                : line.includes(
+                                                                    "stack:"
+                                                                )
+                                                                    ? "text-yellow-300"
+                                                                    : line.includes(
+                                                                        "focus:"
+                                                                    )
+                                                                        ? "text-green-400"
+                                                                        : line.includes(
+                                                                            "status:"
+                                                                        )
+                                                                            ? "text-orange-300"
+                                                                            : line.includes(
+                                                                                "console.log"
+                                                                            )
+                                                                                ? "text-red-400"
+                                                                                : "text-white/80"
+                                                    }`}
                                             >
                                                 {line}
                                             </span>
@@ -398,64 +397,63 @@ export const HeroSection = () => {
 
                                         {index ===
                                             currentCodeLine && (
-                                            <>
-                                                <span
-                                                    className={`${
-                                                        displayedCode.includes(
+                                                <>
+                                                    <span
+                                                        className={`${displayedCode.includes(
                                                             "import"
                                                         )
-                                                            ? "text-purple-400"
-                                                            : displayedCode.includes(
-                                                                  "const"
-                                                              )
-                                                            ? "text-pink-400"
-                                                            : displayedCode.includes(
-                                                                  "name:"
-                                                              )
-                                                            ? "text-cyan-400"
-                                                            : displayedCode.includes(
-                                                                  "stack:"
-                                                              )
-                                                            ? "text-yellow-300"
-                                                            : displayedCode.includes(
-                                                                  "focus:"
-                                                              )
-                                                            ? "text-green-400"
-                                                            : displayedCode.includes(
-                                                                  "status:"
-                                                              )
-                                                            ? "text-orange-300"
-                                                            : displayedCode.includes(
-                                                                  "console.log"
-                                                              )
-                                                            ? "text-red-400"
-                                                            : "text-white/80"
-                                                    }`}
-                                                >
-                                                    {
-                                                        displayedCode
-                                                    }
-                                                </span>
+                                                                ? "text-purple-400"
+                                                                : displayedCode.includes(
+                                                                    "const"
+                                                                )
+                                                                    ? "text-pink-400"
+                                                                    : displayedCode.includes(
+                                                                        "name:"
+                                                                    )
+                                                                        ? "text-cyan-400"
+                                                                        : displayedCode.includes(
+                                                                            "stack:"
+                                                                        )
+                                                                            ? "text-yellow-300"
+                                                                            : displayedCode.includes(
+                                                                                "focus:"
+                                                                            )
+                                                                                ? "text-green-400"
+                                                                                : displayedCode.includes(
+                                                                                    "status:"
+                                                                                )
+                                                                                    ? "text-orange-300"
+                                                                                    : displayedCode.includes(
+                                                                                        "console.log"
+                                                                                    )
+                                                                                        ? "text-red-400"
+                                                                                        : "text-white/80"
+                                                            }`}
+                                                    >
+                                                        {
+                                                            displayedCode
+                                                        }
+                                                    </span>
 
-                                                <motion.span
-                                                    animate={{
-                                                        opacity: [
-                                                            1,
-                                                            0,
-                                                            1,
-                                                        ],
-                                                    }}
-                                                    transition={{
-                                                        duration: 0.8,
-                                                        repeat:
-                                                            Infinity,
-                                                    }}
-                                                    className="ml-1 text-pink-400"
-                                                >
-                                                    ▊
-                                                </motion.span>
-                                            </>
-                                        )}
+                                                    <motion.span
+                                                        animate={{
+                                                            opacity: [
+                                                                1,
+                                                                0,
+                                                                1,
+                                                            ],
+                                                        }}
+                                                        transition={{
+                                                            duration: 0.8,
+                                                            repeat:
+                                                                Infinity,
+                                                        }}
+                                                        className="ml-1 text-pink-400"
+                                                    >
+                                                        ▊
+                                                    </motion.span>
+                                                </>
+                                            )}
 
                                     </div>
                                 )

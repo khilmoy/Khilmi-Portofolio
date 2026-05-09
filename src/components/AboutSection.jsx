@@ -265,12 +265,11 @@ export const AboutSection = () => {
                                                         key={
                                                             index
                                                         }
-                                                        className={`rounded-2xl border border-white/10 bg-white/5 p-3 transition-all duration-300 sm:p-4 ${
-                                                            counter ===
+                                                        className={`rounded-2xl border border-white/10 bg-white/5 p-3 transition-all duration-300 sm:p-4 ${counter ===
                                                             index
-                                                                ? "border-pink-500/40 bg-pink-500/10"
-                                                                : ""
-                                                        }`}
+                                                            ? "border-pink-500/40 bg-pink-500/10"
+                                                            : ""
+                                                            }`}
                                                     >
 
                                                         <div className="flex items-center gap-2">
@@ -331,12 +330,11 @@ export const AboutSection = () => {
                                                         tab
                                                     )
                                                 }
-                                                className={`flex-1 px-2 py-3 text-[11px] font-medium transition-all duration-300 sm:px-4 sm:text-sm ${
-                                                    activeTab ===
+                                                className={`flex-1 px-2 py-3 text-[11px] font-medium transition-all duration-300 sm:px-4 sm:text-sm ${activeTab ===
                                                     tab
-                                                        ? "bg-gradient-to-r from-pink-500 to-purple-600 text-white"
-                                                        : "text-white/60 hover:bg-white/5 hover:text-white"
-                                                }`}
+                                                    ? "bg-gradient-to-r from-pink-500 to-purple-600 text-white"
+                                                    : "text-white/60 hover:bg-white/5 hover:text-white"
+                                                    }`}
                                             >
 
                                                 {tab
@@ -383,7 +381,7 @@ export const AboutSection = () => {
 
                                             {
                                                 tabContent[
-                                                    activeTab
+                                                activeTab
                                                 ]
                                             }
 
@@ -464,6 +462,7 @@ export const AboutSection = () => {
                                             "PHP",
                                             "Laravel",
                                             "MySQL",
+                                            "Python",
                                         ].map(
                                             (
                                                 item,
@@ -501,8 +500,8 @@ export const AboutSection = () => {
 
                                         {[
                                             "Figma",
-                                            "UI/UX Design",
-                                            "Responsive Design",
+                                            "VS Code",
+                                            "GitHub",
                                         ].map(
                                             (
                                                 item,
